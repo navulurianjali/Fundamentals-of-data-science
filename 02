@@ -1,0 +1,14 @@
+import numpy as np
+
+sales_data = np.array([
+    [2500, 3000, 1275],
+    [45000, 5000, 5475],
+    [315000, 20000, 18000]
+])
+products = ["Watch", "Phone", "Laptop"]
+average_price = np.mean(sales_data)
+
+print("Sales Data:")
+for i in range(len(products)):
+    print(products[i], ":", sales_data[i])
+print("\nAverage Price of All Products Sold:", round(average_price, 2))
