@@ -1,0 +1,20 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv(r"D:\Downloads\house.csv")
+
+house_data = df.to_numpy()
+
+print("House Dataset:")
+print(house_data)
+
+
+
+filtered_houses = house_data[house_data[:, 0] > 4]
+
+average_price = np.mean(filtered_houses[:, 2])
+
+print("\nHouses with more than 4 bedrooms:")
+print(filtered_houses)
+
+print("\nAverage Sale Price:", average_price)
