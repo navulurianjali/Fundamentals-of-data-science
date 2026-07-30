@@ -1,0 +1,25 @@
+
+n = int(input("Enter the number of items: "))
+
+total_cost = 0
+
+for i in range(n):
+    price = float(input(f"Enter price of item {i+1}: "))
+    quantity = int(input(f"Enter quantity of item {i+1}: "))
+    total_cost += price * quantity
+
+discount_rate = float(input("Enter discount rate (%): "))
+tax_rate = float(input("Enter tax rate (%): "))
+
+discount_amount = (total_cost * discount_rate) / 100
+discounted_total = total_cost - discount_amount
+
+tax_amount = (discounted_total * tax_rate) / 100
+
+final_amount = discounted_total + tax_amount
+
+print("\n----- BILL DETAILS -----")
+print("Total Cost        :", total_cost)
+print("Discount Amount   :", discount_amount)
+print("Tax Amount        :", tax_amount)
+print("Final Amount      :", final_amount)
