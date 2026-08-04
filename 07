@@ -1,0 +1,27 @@
+import pandas as pd
+
+order_data = pd.DataFrame({
+    'CustomerID': [101,102,101,103,102,101],
+    'OrderDate': ['2024-01-10','2024-01-12','2024-01-15',
+                  '2024-01-18','2024-01-20','2024-01-25'],
+    'Product': ['Laptop','Mouse','Laptop','Keyboard','Mouse','Keyboard'],
+    'Quantity': [2,5,1,3,2,4]
+})
+
+order_data['OrderDate'] = pd.to_datetime(order_data['OrderDate'])
+
+orders = order_data.groupby('CustomerID').size()
+
+avg_quantity = order_data.groupby('Product')['Quantity'].mean()
+
+earliest = order_data['OrderDate'].min()
+latest = order_data['OrderDate'].max()
+
+print("Orders by Customer")
+print(orders)
+
+print("\nAverage Quantity")
+print(avg_quantity)
+
+print("\nEarliest Order Date:", earliest.date())
+print("Latest Order Date:", latest.date())
