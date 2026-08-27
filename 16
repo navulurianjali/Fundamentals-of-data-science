@@ -1,0 +1,22 @@
+from collections import Counter
+import re
+
+# Input text
+text = """
+data science is useful
+data science helps analyze data
+python is useful for data science
+"""
+
+# Convert to lowercase
+text = text.lower()
+
+# Extract words
+words = re.findall(r'\b\w+\b', text)
+
+# Frequency distribution
+frequency = Counter(words)
+
+print("Word Frequency:")
+for word, count in frequency.items():
+    print(word, ":", count)
