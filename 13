@@ -1,0 +1,31 @@
+import pandas as pd
+
+# Input dataset
+data = {
+    "Date": ["01-01-2026", "02-01-2026", "03-01-2026",
+             "04-01-2026", "05-01-2026"],
+    "Close": [100, 105, 102, 110, 108]
+}
+
+df = pd.DataFrame(data)
+
+# Save as CSV
+df.to_csv("stock_data.csv", index=False)
+
+# Read CSV
+df = pd.read_csv("stock_data.csv")
+
+# Calculate variability
+mean_price = df["Close"].mean()
+std_price = df["Close"].std()
+min_price = df["Close"].min()
+max_price = df["Close"].max()
+
+print("Stock Data:")
+print(df)
+
+print("\nMean Stock Price:", mean_price)
+print("Standard Deviation:", round(std_price, 2))
+print("Minimum Price:", min_price)
+print("Maximum Price:", max_price)
+print("Price Range:", max_price - min_price)
