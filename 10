@@ -1,0 +1,19 @@
+import matplotlib.pyplot as plt
+
+# Input dataset
+months = ["Jan", "Feb", "Mar", "Apr", "May"]
+sales = [12000, 15000, 13000, 18000, 20000]
+
+# Line plot
+plt.plot(months, sales, marker='o')
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.title("Monthly Sales - Line Plot")
+plt.show()
+
+# Bar plot
+plt.bar(months, sales)
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.title("Monthly Sales - Bar Plot")
+plt.show()
